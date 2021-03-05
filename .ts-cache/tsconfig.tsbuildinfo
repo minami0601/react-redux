@@ -161,10 +161,35 @@
         "signature": "2ad234885a4240522efccd77de6c7d99eecf9b4de0914adb9a35c0c22433f993",
         "affectsGlobalScope": true
       },
-      "../src/index.ts": {
-        "version": "d0beee1121140ef8c2d72bb0695657d017ac670a33ec8503b75485b35c412377",
-        "signature": "2b4cb00bad2e731fd4c729da1e88b5a069153e187b58dec435392c0678abd938",
+      "../node_modules/@types/react/global.d.ts": {
+        "version": "ecf78e637f710f340ec08d5d92b3f31b134a46a4fcf2e758690d8c46ce62cba6",
+        "signature": "ecf78e637f710f340ec08d5d92b3f31b134a46a4fcf2e758690d8c46ce62cba6",
         "affectsGlobalScope": true
+      },
+      "../node_modules/csstype/index.d.ts": {
+        "version": "0a6f28e1d77b99b0ef7da2f0bf50f301ea8a7eb7b4f573e458e725452a477bd2",
+        "signature": "0a6f28e1d77b99b0ef7da2f0bf50f301ea8a7eb7b4f573e458e725452a477bd2",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/prop-types/index.d.ts": {
+        "version": "a7e32dcb90bf0c1b7a1e4ac89b0f7747cbcba25e7beddc1ebf17be1e161842ad",
+        "signature": "a7e32dcb90bf0c1b7a1e4ac89b0f7747cbcba25e7beddc1ebf17be1e161842ad",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/react/index.d.ts": {
+        "version": "9692a141afe8f30a5542189ffceb1a043f3d1fbaf0e07d28a8e9ac6d32c4cb01",
+        "signature": "9692a141afe8f30a5542189ffceb1a043f3d1fbaf0e07d28a8e9ac6d32c4cb01",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/@types/react-dom/index.d.ts": {
+        "version": "5e7837730e7ef63981cbd8d878388c4b37acc70dc3190881e230a23e3b4f9514",
+        "signature": "5e7837730e7ef63981cbd8d878388c4b37acc70dc3190881e230a23e3b4f9514",
+        "affectsGlobalScope": false
+      },
+      "../src/index.tsx": {
+        "version": "246d2485144ecc7f7855af0b268723d25b4718a9bf3748a9f0463d08b9bc7e63",
+        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+        "affectsGlobalScope": false
       },
       "../node_modules/@types/q/index.d.ts": {
         "version": "f9a2dd6a6084665f093ed0e9664b8e673be2a45e342a59dd4e0e4e552e68a9ad",
@@ -181,15 +206,44 @@
       ],
       "module": 99,
       "moduleResolution": 2,
+      "allowSyntheticDefaultImports": true,
+      "jsx": 2,
       "incremental": true,
       "outDir": "./",
       "strictNullChecks": true,
       "configFilePath": "../tsconfig.json"
     },
-    "referencedMap": {},
-    "exportedModulesMap": {},
+    "referencedMap": {
+      "../node_modules/@types/react-dom/index.d.ts": [
+        "../node_modules/@types/react/index.d.ts"
+      ],
+      "../node_modules/@types/react/index.d.ts": [
+        "../node_modules/@types/prop-types/index.d.ts",
+        "../node_modules/@types/react/global.d.ts",
+        "../node_modules/csstype/index.d.ts"
+      ],
+      "../src/index.tsx": [
+        "../node_modules/@types/react-dom/index.d.ts",
+        "../node_modules/@types/react/index.d.ts"
+      ]
+    },
+    "exportedModulesMap": {
+      "../node_modules/@types/react-dom/index.d.ts": [
+        "../node_modules/@types/react/index.d.ts"
+      ],
+      "../node_modules/@types/react/index.d.ts": [
+        "../node_modules/@types/prop-types/index.d.ts",
+        "../node_modules/@types/react/global.d.ts",
+        "../node_modules/csstype/index.d.ts"
+      ]
+    },
     "semanticDiagnosticsPerFile": [
+      "../node_modules/@types/prop-types/index.d.ts",
       "../node_modules/@types/q/index.d.ts",
+      "../node_modules/@types/react-dom/index.d.ts",
+      "../node_modules/@types/react/global.d.ts",
+      "../node_modules/@types/react/index.d.ts",
+      "../node_modules/csstype/index.d.ts",
       "../node_modules/typescript/lib/lib.dom.d.ts",
       "../node_modules/typescript/lib/lib.dom.iterable.d.ts",
       "../node_modules/typescript/lib/lib.es2015.collection.d.ts",
@@ -222,7 +276,7 @@
       "../node_modules/typescript/lib/lib.es2019.string.d.ts",
       "../node_modules/typescript/lib/lib.es2019.symbol.d.ts",
       "../node_modules/typescript/lib/lib.es5.d.ts",
-      "../src/index.ts"
+      "../src/index.tsx"
     ]
   },
   "version": "4.2.3"

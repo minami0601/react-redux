@@ -162,8 +162,8 @@
         "affectsGlobalScope": true
       },
       "../src/index.ts": {
-        "version": "782a9475e087bfb4902113672ffaf98a00b603526a3a976e41da0ab9d70ad13e",
-        "signature": "eb7de85fc4a976c3ffd0954bff1fd3c845db2f3456d7ffa1cc32134a9e39816f",
+        "version": "d0beee1121140ef8c2d72bb0695657d017ac670a33ec8503b75485b35c412377",
+        "signature": "2b4cb00bad2e731fd4c729da1e88b5a069153e187b58dec435392c0678abd938",
         "affectsGlobalScope": true
       },
       "../node_modules/@types/q/index.d.ts": {
@@ -222,38 +222,7 @@
       "../node_modules/typescript/lib/lib.es2019.string.d.ts",
       "../node_modules/typescript/lib/lib.es2019.symbol.d.ts",
       "../node_modules/typescript/lib/lib.es5.d.ts",
-      [
-        "../src/index.ts",
-        [
-          {
-            "file": "../src/index.ts",
-            "start": 6,
-            "length": 7,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type 'string | null' is not assignable to type 'string'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Type 'null' is not assignable to type 'string'.",
-                  "category": 1,
-                  "code": 2322
-                }
-              ]
-            }
-          },
-          {
-            "file": "../src/index.ts",
-            "start": 24,
-            "length": 28,
-            "messageText": "Object is possibly 'null'.",
-            "category": 1,
-            "code": 2531
-          }
-        ]
-      ]
+      "../src/index.ts"
     ]
   },
   "version": "4.2.3"

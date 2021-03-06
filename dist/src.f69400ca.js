@@ -29782,12 +29782,12 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
-  return _react.default.createElement("h1", {
-    foo: "bar"
-  }, "Hello React!");
+  return _react.default.createElement("div", null, _react.default.createElement("header", null, _react.default.createElement("div", null, "Kanban board"), _react.default.createElement("input", {
+    placeholder: "Filter cards"
+  })), _react.default.createElement("div", null, _react.default.createElement("section", null, _react.default.createElement("h3", null, "TODO"), _react.default.createElement("article", null, "\u671D\u98DF\u3092\u3068\u308B\uD83C\uDF5E"), _react.default.createElement("article", null, "SNS\u3092\u30C1\u30A7\u30C3\u30AF\u3059\u308B\uD83D\uDC26"), _react.default.createElement("article", null, "\u5E03\u56E3\u306B\u5165\u308B (:3[___]")), _react.default.createElement("section", null, _react.default.createElement("h3", null, "Doing"), _react.default.createElement("article", null, "\u9854\u3092\u6D17\u3046\uD83D\uDC50"), _react.default.createElement("article", null, "\u6B6F\u3092\u78E8\u304F\uD83E\uDDB7")), _react.default.createElement("section", null, _react.default.createElement("h3", null, "Waiting")), _react.default.createElement("section", null, _react.default.createElement("h3", null, "Done"), _react.default.createElement("article", null, "\u5E03\u56E3\u304B\u3089\u51FA\u308B (:3\u3063)\u3063 -=\u4E09[\uFF3F\uFF3F]"))));
 }
 
-_reactDom.default.render(_react.default.createElement(App, null), document.getElementById("app"));
+_reactDom.default.render(_react.default.createElement(App, null), document.getElementById('app'));
 },{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -29816,7 +29816,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49859" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65053" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

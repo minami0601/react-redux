@@ -31996,7 +31996,31 @@ exports.ServerStyleSheet = Ue;
 "production" !== "development" && "undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native"), "production" !== "development" && "test" !== "development" && (window["__styled-components-init__"] = window["__styled-components-init__"] || 0, 1 === window["__styled-components-init__"] && console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."), window["__styled-components-init__"] += 1);
 var _default = qe;
 exports.default = _default;
-},{"react-is":"../node_modules/react-is/index.js","react":"../node_modules/react/index.js","shallowequal":"../node_modules/shallowequal/index.js","@emotion/stylis":"../node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"../node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"../node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","hoist-non-react-statics":"../node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"../node_modules/process/browser.js"}],"color.tsx":[function(require,module,exports) {
+},{"react-is":"../node_modules/react-is/index.js","react":"../node_modules/react/index.js","shallowequal":"../node_modules/shallowequal/index.js","@emotion/stylis":"../node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"../node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"../node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","hoist-non-react-statics":"../node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"../node_modules/process/browser.js"}],"GlobalStyle.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.GlobalStyle = void 0;
+
+var _styledComponents = require("styled-components");
+
+const GlobalStyle = (0, _styledComponents.createGlobalStyle)`
+  html, body, #app {
+    height: 100%;
+  }
+
+  body {
+    /* https://css-tricks.com/snippets/css/system-font-stack/ */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+
+    overflow-wrap: break-word;
+  }
+`;
+exports.GlobalStyle = GlobalStyle;
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"color.tsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32039,16 +32063,63 @@ const LightSilver = '#F8F8F8';
 exports.LightSilver = LightSilver;
 const White = '#FFFFFF';
 exports.White = White;
-},{}],"index.tsx":[function(require,module,exports) {
+},{}],"icon.tsx":[function(require,module,exports) {
 "use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.TrashIcon = exports.CheckIcon = exports.PlusIcon = exports.SearchIcon = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _reactDom = _interopRequireDefault(require("react-dom"));
+var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-var _styledComponents = _interopRequireWildcard(require("styled-components"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// http://svgicons.sparkk.fr
+const SearchIcon = generateIcon('M19.129,18.164l-4.518-4.52c1.152-1.373,1.852-3.143,1.852-5.077c0-4.361-3.535-7.896-7.896-7.896c-4.361,0-7.896,3.535-7.896,7.896s3.535,7.896,7.896,7.896c1.934,0,3.705-0.698,5.078-1.853l4.52,4.519c0.266,0.268,0.699,0.268,0.965,0C19.396,18.863,19.396,18.431,19.129,18.164z M8.567,15.028c-3.568,0-6.461-2.893-6.461-6.461s2.893-6.461,6.461-6.461c3.568,0,6.46,2.893,6.46,6.461S12.135,15.028,8.567,15.028z');
+exports.SearchIcon = SearchIcon;
+const PlusIcon = generateIcon('M13.68,9.448h-3.128V6.319c0-0.304-0.248-0.551-0.552-0.551S9.448,6.015,9.448,6.319v3.129H6.319c-0.304,0-0.551,0.247-0.551,0.551s0.247,0.551,0.551,0.551h3.129v3.129c0,0.305,0.248,0.551,0.552,0.551s0.552-0.246,0.552-0.551v-3.129h3.128c0.305,0,0.552-0.247,0.552-0.551S13.984,9.448,13.68,9.448z M10,0.968c-4.987,0-9.031,4.043-9.031,9.031c0,4.989,4.044,9.032,9.031,9.032c4.988,0,9.031-4.043,9.031-9.032C19.031,5.012,14.988,0.968,10,0.968z M10,17.902c-4.364,0-7.902-3.539-7.902-7.903c0-4.365,3.538-7.902,7.902-7.902S17.902,5.635,17.902,10C17.902,14.363,14.364,17.902,10,17.902z');
+exports.PlusIcon = PlusIcon;
+const CheckIcon = generateIcon('M9.917,0.875c-5.086,0-9.208,4.123-9.208,9.208c0,5.086,4.123,9.208,9.208,9.208s9.208-4.122,9.208-9.208C19.125,4.998,15.003,0.875,9.917,0.875z M9.917,18.141c-4.451,0-8.058-3.607-8.058-8.058s3.607-8.057,8.058-8.057c4.449,0,8.057,3.607,8.057,8.057S14.366,18.141,9.917,18.141z M13.851,6.794l-5.373,5.372L5.984,9.672c-0.219-0.219-0.575-0.219-0.795,0c-0.219,0.22-0.219,0.575,0,0.794l2.823,2.823c0.02,0.028,0.031,0.059,0.055,0.083c0.113,0.113,0.263,0.166,0.411,0.162c0.148,0.004,0.298-0.049,0.411-0.162c0.024-0.024,0.036-0.055,0.055-0.083l5.701-5.7c0.219-0.219,0.219-0.575,0-0.794C14.425,6.575,14.069,6.575,13.851,6.794z');
+exports.CheckIcon = CheckIcon;
+const TrashIcon = generateIcon('M7.083,8.25H5.917v7h1.167V8.25z M18.75,3h-5.834V1.25c0-0.323-0.262-0.583-0.582-0.583H7.667c-0.322,0-0.583,0.261-0.583,0.583V3H1.25C0.928,3,0.667,3.261,0.667,3.583c0,0.323,0.261,0.583,0.583,0.583h1.167v14c0,0.644,0.522,1.166,1.167,1.166h12.833c0.645,0,1.168-0.522,1.168-1.166v-14h1.166c0.322,0,0.584-0.261,0.584-0.583C19.334,3.261,19.072,3,18.75,3z M8.25,1.833h3.5V3h-3.5V1.833z M16.416,17.584c0,0.322-0.262,0.583-0.582,0.583H4.167c-0.322,0-0.583-0.261-0.583-0.583V4.167h12.833V17.584z M14.084,8.25h-1.168v7h1.168V8.25z M10.583,7.083H9.417v8.167h1.167V7.083z');
+exports.TrashIcon = TrashIcon;
+
+function generateIcon(d) {
+  return function Icon({
+    className
+  }) {
+    return _react.default.createElement(SVGBase, {
+      className: className,
+      viewBox: "0 0 20 20"
+    }, _react.default.createElement("path", {
+      d: d
+    }));
+  };
+}
+
+const SVGBase = _styledComponents.default.svg`
+  display: block;
+  width: 1em;
+  height: 1em;
+`;
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"CardFilter.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.CardFilter = CardFilter;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var color = _interopRequireWildcard(require("./color"));
+
+var _icon = require("./icon");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -32056,106 +32127,346 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function App() {
-  return _react.default.createElement(Container, null, _react.default.createElement(Header, null, _react.default.createElement(Logo, null, "Kanban board"), _react.default.createElement(CardFilter, {
+function CardFilter() {
+  return _react.default.createElement(Container, null, _react.default.createElement(SearchIcon, null), _react.default.createElement(Input, {
     placeholder: "Filter cards"
-  })), _react.default.createElement(MainArea, null, _react.default.createElement(HorizontalScroll, null, _react.default.createElement(Column, null, _react.default.createElement(ColumnHeader, null, "TODO"), _react.default.createElement(Card, null, "\u671D\u98DF\u3092\u3068\u308B\uD83C\uDF5E"), _react.default.createElement(Card, null, "SNS\u3092\u30C1\u30A7\u30C3\u30AF\u3059\u308B\uD83D\uDC26"), _react.default.createElement(Card, null, "\u5E03\u56E3\u306B\u5165\u308B (:3[___]")), _react.default.createElement(Column, null, _react.default.createElement(ColumnHeader, null, "Doing"), _react.default.createElement(Card, null, "\u9854\u3092\u6D17\u3046\uD83D\uDC50"), _react.default.createElement(Card, null, "\u6B6F\u3092\u78E8\u304F\uD83E\uDDB7")), _react.default.createElement(Column, null, _react.default.createElement(ColumnHeader, null, "Waiting")), _react.default.createElement(Column, null, _react.default.createElement(ColumnHeader, null, "Done"), _react.default.createElement(Card, null, "\u5E03\u56E3\u304B\u3089\u51FA\u308B (:3\u3063)\u3063 -=\u4E09[\uFF3F\uFF3F]")))));
+  }));
+}
+
+const Container = _styledComponents.default.label`
+  display: flex;
+  align-items: center;
+  min-width: 300px;
+  border: solid 1px ${color.Silver};
+  border-radius: 3px;
+`;
+const SearchIcon = (0, _styledComponents.default)(_icon.SearchIcon)`
+  margin: 0 4px 0 8px;
+  font-size: 16px;
+  color: ${color.Silver};
+`;
+const Input = _styledComponents.default.input.attrs({
+  type: 'search'
+})`
+  width: 100%;
+  padding: 6px 8px 6px 0;
+  color: ${color.White};
+  font-size: 14px;
+
+  :focus {
+    outline: none;
+  }
+`;
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./color":"color.tsx","./icon":"icon.tsx"}],"Header.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Header = Header;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var color = _interopRequireWildcard(require("./color"));
+
+var _CardFilter = require("./CardFilter");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Header({
+  className
+}) {
+  return _react.default.createElement(Container, {
+    className: className
+  }, _react.default.createElement(Logo, null, "Kanban board"), _react.default.createElement(_CardFilter.CardFilter, null));
 }
 
 const Container = _styledComponents.default.div`
-display: flex;
-flex-flow: column;
-height: 100%;
-`;
-const Header = _styledComponents.default.div`
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 8px 16px;
-background-color: ${color.Navy};
-flex-shrink: 0;
-color: ${color.Silver};
-font-size: 16px;
-font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background-color: ${color.Navy};
 `;
 const Logo = _styledComponents.default.div`
-height: 100%;
-padding: 16px 0;
-overflow-y: auto;
+  color: ${color.Silver};
+  font-size: 16px;
+  font-weight: bold;
 `;
-const CardFilter = _styledComponents.default.input`
-display: flex;
-align-items: center;
-min-width: 300px;
-border: solid 1px ${color.Silver};
-border-radius: 3px;
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./color":"color.tsx","./CardFilter":"CardFilter.tsx"}],"Card.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Card = Card;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var color = _interopRequireWildcard(require("./color"));
+
+var _icon = require("./icon");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Card({
+  text
+}) {
+  return _react.default.createElement(Container, null, _react.default.createElement(CheckIcon, null), text === null || text === void 0 ? void 0 : text.split(/(https?:\/\/\S+)/g).map((fragment, i) => i % 2 === 0 ? _react.default.createElement(Text, {
+    key: i
+  }, fragment) : _react.default.createElement(Link, {
+    key: i,
+    href: fragment
+  }, fragment)), _react.default.createElement(DeleteButton, null));
+}
+
+const Container = _styledComponents.default.div.attrs({
+  draggable: true
+})`
+  position: relative;
+  border: solid 1px ${color.Silver};
+  border-radius: 6px;
+  box-shadow: 0 1px 3px hsla(0, 0%, 7%, 0.1);
+  padding: 8px 32px;
+  background-color: ${color.White};
+  cursor: move;
+`;
+const CheckIcon = (0, _styledComponents.default)(_icon.CheckIcon)`
+  position: absolute;
+  top: 12px;
+  left: 8px;
+  color: ${color.Green};
+`;
+const DeleteButton = _styledComponents.default.button.attrs({
+  type: 'button',
+  children: _react.default.createElement(_icon.TrashIcon, null)
+})`
+  position: absolute;
+  top: 12px;
+  right: 8px;
+  font-size: 14px;
+  color: ${color.Gray};
+
+  :hover {
+    color: ${color.Red};
+  }
+`;
+const Text = _styledComponents.default.span`
+  color: ${color.Black};
+  font-size: 14px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+`;
+const Link = _styledComponents.default.a.attrs({
+  target: '_blank',
+  rel: 'noopener noreferrer'
+})`
+  color: ${color.Blue};
+  font-size: 14px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+`;
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./color":"color.tsx","./icon":"icon.tsx"}],"Column.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Column = Column;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var color = _interopRequireWildcard(require("./color"));
+
+var _Card = require("./Card");
+
+var _icon = require("./icon");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Column({
+  title,
+  cards
+}) {
+  const totalCount = cards.length;
+  return _react.default.createElement(Container, null, _react.default.createElement(Header, null, _react.default.createElement(CountBadge, null, totalCount), _react.default.createElement(ColumnName, null, title), _react.default.createElement(AddButton, null)), _react.default.createElement(VerticalScroll, null, cards.map(({
+    id,
+    text
+  }) => _react.default.createElement(_Card.Card, {
+    key: id,
+    text: text
+  }))));
+}
+
+const Container = _styledComponents.default.div`
+  display: flex;
+  flex-flow: column;
+  width: 355px;
+  height: 100%;
+  border: solid 1px ${color.Silver};
+  border-radius: 6px;
+  background-color: ${color.LightSilver};
+
+  > :not(:last-child) {
+    flex-shrink: 0;
+  }
+`;
+const Header = _styledComponents.default.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px;
+`;
+const CountBadge = _styledComponents.default.div`
+  margin-right: 8px;
+  border-radius: 20px;
+  padding: 2px 6px;
+  color: ${color.Black};
+  background-color: ${color.Silver};
+  font-size: 12px;
+  line-height: 1;
+`;
+const ColumnName = _styledComponents.default.div`
+  color: ${color.Black};
+  font-size: 14px;
+  font-weight: bold;
+`;
+const AddButton = _styledComponents.default.button.attrs({
+  type: 'button',
+  children: _react.default.createElement(_icon.PlusIcon, null)
+})`
+  margin-left: auto;
+  color: ${color.Black};
+
+  :hover {
+    color: ${color.Blue};
+  }
+`;
+const VerticalScroll = _styledComponents.default.div`
+  height: 100%;
+  padding: 8px;
+  overflow-y: auto;
+  flex: 1 1 auto;
+
+  > :not(:first-child) {
+    margin-top: 8px;
+  }
+`;
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./color":"color.tsx","./Card":"Card.tsx","./icon":"icon.tsx"}],"App.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.App = App;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _Header2 = require("./Header");
+
+var _Column = require("./Column");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function App() {
+  return _react.default.createElement(Container, null, _react.default.createElement(Header, null), _react.default.createElement(MainArea, null, _react.default.createElement(HorizontalScroll, null, _react.default.createElement(_Column.Column, {
+    title: "TODO",
+    cards: [{
+      id: 'a',
+      text: '朝食をとる🍞'
+    }, {
+      id: 'b',
+      text: 'SNSをチェックする🐦'
+    }, {
+      id: 'c',
+      text: '布団に入る (:3[___]'
+    }]
+  }), _react.default.createElement(_Column.Column, {
+    title: "Doing",
+    cards: [{
+      id: 'd',
+      text: '顔を洗う👐'
+    }, {
+      id: 'e',
+      text: '歯を磨く🦷'
+    }]
+  }), _react.default.createElement(_Column.Column, {
+    title: "Waiting",
+    cards: []
+  }), _react.default.createElement(_Column.Column, {
+    title: "Done",
+    cards: [{
+      id: 'f',
+      text: '布団から出る (:3っ)っ -=三[＿＿]'
+    }]
+  }))));
+}
+
+const Container = _styledComponents.default.div`
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+`;
+const Header = (0, _styledComponents.default)(_Header2.Header)`
+  flex-shrink: 0;
 `;
 const MainArea = _styledComponents.default.div`
-height: 100%;
-padding: 16px 0;
-overflow-y: auto;
+  height: 100%;
+  padding: 16px 0;
+  overflow-y: auto;
 `;
 const HorizontalScroll = _styledComponents.default.div`
-display: flex;
-width: 100%;
-height: 100%;
-overflow-x: auto;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
 
-> * {
-  margin-left: 16px;
-  flex-shrink: 0;
-}
+  > * {
+    margin-left: 16px;
+    flex-shrink: 0;
+  }
 
-::after {
-  display: block;
-  flex: 0 0 16px;
-  content: '';
-}
+  ::after {
+    display: block;
+    flex: 0 0 16px;
+    content: '';
+  }
 `;
-const Column = _styledComponents.default.div`
-display: flex;
-flex-flow: column;
-width: 355px;
-height: 100%;
-border: solid 1px ${color.Silver};
-border-radius: 6px;
-background-color: ${color.LightSilver};
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./Header":"Header.tsx","./Column":"Column.tsx"}],"index.tsx":[function(require,module,exports) {
+"use strict";
 
-> :not(:last-child) {
-  flex-shrink: 0;
-}
-`;
-const ColumnHeader = _styledComponents.default.div`
-display: flex;
-justify-content: flex-start;
-align-items: center;
-padding: 8px;
-`;
-const Card = _styledComponents.default.div`
-position: relative;
-border: solid 1px ${color.Silver};
-border-radius: 6px;
-box-shadow: 0 1px 3px hsla(0, 0%, 7%, 0.1);
-padding: 8px 32px;
-background-color: ${color.White};
-cursor: move;
-`;
-const GlobalStyle = (0, _styledComponents.createGlobalStyle)`
-   html, body, #app {
-     height: 100%;
-   }
- 
-   body {
-     /* https://css-tricks.com/snippets/css/system-font-stack/ */
-     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-       Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
- 
-     overflow-wrap: break-word;
-   }
- `;
+var _react = _interopRequireDefault(require("react"));
 
-_reactDom.default.render(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement(GlobalStyle, null), _react.default.createElement(App, null)), document.getElementById('app'));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./color":"color.tsx"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var _reactDom = _interopRequireDefault(require("react-dom"));
+
+var _GlobalStyle = require("./GlobalStyle");
+
+var _App = require("./App");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_reactDom.default.render(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_GlobalStyle.GlobalStyle, null), _react.default.createElement(_App.App, null)), document.getElementById('app'));
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./GlobalStyle":"GlobalStyle.tsx","./App":"App.tsx"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -32183,7 +32494,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57924" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62130" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -31996,34 +31996,166 @@ exports.ServerStyleSheet = Ue;
 "production" !== "development" && "undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native"), "production" !== "development" && "test" !== "development" && (window["__styled-components-init__"] = window["__styled-components-init__"] || 0, 1 === window["__styled-components-init__"] && console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."), window["__styled-components-init__"] += 1);
 var _default = qe;
 exports.default = _default;
-},{"react-is":"../node_modules/react-is/index.js","react":"../node_modules/react/index.js","shallowequal":"../node_modules/shallowequal/index.js","@emotion/stylis":"../node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"../node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"../node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","hoist-non-react-statics":"../node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"../node_modules/process/browser.js"}],"index.tsx":[function(require,module,exports) {
+},{"react-is":"../node_modules/react-is/index.js","react":"../node_modules/react/index.js","shallowequal":"../node_modules/shallowequal/index.js","@emotion/stylis":"../node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"../node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"../node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","hoist-non-react-statics":"../node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"../node_modules/process/browser.js"}],"color.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.White = exports.LightSilver = exports.Silver = exports.Gray = exports.Black = exports.Purple = exports.Fuchsia = exports.Maroon = exports.Red = exports.Orange = exports.Yellow = exports.Lime = exports.Green = exports.Olive = exports.Teal = exports.Aqua = exports.Blue = exports.Navy = void 0;
+const Navy = '#001f3f';
+exports.Navy = Navy;
+const Blue = '#0074D9';
+exports.Blue = Blue;
+const Aqua = '#7FDBFF';
+exports.Aqua = Aqua;
+const Teal = '#39CCCC';
+exports.Teal = Teal;
+const Olive = '#3D9970';
+exports.Olive = Olive;
+const Green = '#2ECC40';
+exports.Green = Green;
+const Lime = '#01FF70';
+exports.Lime = Lime;
+const Yellow = '#FFDC00';
+exports.Yellow = Yellow;
+const Orange = '#FF851B';
+exports.Orange = Orange;
+const Red = '#FF4136';
+exports.Red = Red;
+const Maroon = '#85144b';
+exports.Maroon = Maroon;
+const Fuchsia = '#F012BE';
+exports.Fuchsia = Fuchsia;
+const Purple = '#B10DC9';
+exports.Purple = Purple;
+const Black = '#111111';
+exports.Black = Black;
+const Gray = '#AAAAAA';
+exports.Gray = Gray;
+const Silver = '#D0D0D0';
+exports.Silver = Silver;
+const LightSilver = '#F8F8F8';
+exports.LightSilver = LightSilver;
+const White = '#FFFFFF';
+exports.White = White;
+},{}],"index.tsx":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
 
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
+
+var color = _interopRequireWildcard(require("./color"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
   return _react.default.createElement(Container, null, _react.default.createElement(Header, null, _react.default.createElement(Logo, null, "Kanban board"), _react.default.createElement(CardFilter, {
     placeholder: "Filter cards"
-  })), _react.default.createElement(MainArea, null, _react.default.createElement(Column, null, _react.default.createElement(ColumnHeader, null, "TODO"), _react.default.createElement(Card, null, "\u671D\u98DF\u3092\u3068\u308B\uD83C\uDF5E"), _react.default.createElement(Card, null, "SNS\u3092\u30C1\u30A7\u30C3\u30AF\u3059\u308B\uD83D\uDC26"), _react.default.createElement(Card, null, "\u5E03\u56E3\u306B\u5165\u308B (:3[___]")), _react.default.createElement(Column, null, _react.default.createElement(ColumnHeader, null, "Doing"), _react.default.createElement(Card, null, "\u9854\u3092\u6D17\u3046\uD83D\uDC50"), _react.default.createElement(Card, null, "\u6B6F\u3092\u78E8\u304F\uD83E\uDDB7")), _react.default.createElement(Column, null, _react.default.createElement(ColumnHeader, null, "Waiting")), _react.default.createElement(Column, null, _react.default.createElement(ColumnHeader, null, "Done"), _react.default.createElement(Card, null, "\u5E03\u56E3\u304B\u3089\u51FA\u308B (:3\u3063)\u3063 -=\u4E09[\uFF3F\uFF3F]"))));
+  })), _react.default.createElement(MainArea, null, _react.default.createElement(HorizontalScroll, null, _react.default.createElement(Column, null, _react.default.createElement(ColumnHeader, null, "TODO"), _react.default.createElement(Card, null, "\u671D\u98DF\u3092\u3068\u308B\uD83C\uDF5E"), _react.default.createElement(Card, null, "SNS\u3092\u30C1\u30A7\u30C3\u30AF\u3059\u308B\uD83D\uDC26"), _react.default.createElement(Card, null, "\u5E03\u56E3\u306B\u5165\u308B (:3[___]")), _react.default.createElement(Column, null, _react.default.createElement(ColumnHeader, null, "Doing"), _react.default.createElement(Card, null, "\u9854\u3092\u6D17\u3046\uD83D\uDC50"), _react.default.createElement(Card, null, "\u6B6F\u3092\u78E8\u304F\uD83E\uDDB7")), _react.default.createElement(Column, null, _react.default.createElement(ColumnHeader, null, "Waiting")), _react.default.createElement(Column, null, _react.default.createElement(ColumnHeader, null, "Done"), _react.default.createElement(Card, null, "\u5E03\u56E3\u304B\u3089\u51FA\u308B (:3\u3063)\u3063 -=\u4E09[\uFF3F\uFF3F]")))));
 }
 
-const Container = _styledComponents.default.div``;
-const Header = _styledComponents.default.div``;
-const Logo = _styledComponents.default.div``;
-const CardFilter = _styledComponents.default.input``;
-const MainArea = _styledComponents.default.div``;
-const Column = _styledComponents.default.div``;
-const ColumnHeader = _styledComponents.default.div``;
-const Card = _styledComponents.default.div``;
+const Container = _styledComponents.default.div`
+display: flex;
+flex-flow: column;
+height: 100%;
+`;
+const Header = _styledComponents.default.div`
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 8px 16px;
+background-color: ${color.Navy};
+flex-shrink: 0;
+color: ${color.Silver};
+font-size: 16px;
+font-weight: bold;
+`;
+const Logo = _styledComponents.default.div`
+height: 100%;
+padding: 16px 0;
+overflow-y: auto;
+`;
+const CardFilter = _styledComponents.default.input`
+display: flex;
+align-items: center;
+min-width: 300px;
+border: solid 1px ${color.Silver};
+border-radius: 3px;
+`;
+const MainArea = _styledComponents.default.div`
+height: 100%;
+padding: 16px 0;
+overflow-y: auto;
+`;
+const HorizontalScroll = _styledComponents.default.div`
+display: flex;
+width: 100%;
+height: 100%;
+overflow-x: auto;
 
-_reactDom.default.render(_react.default.createElement(App, null), document.getElementById('app'));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+> * {
+  margin-left: 16px;
+  flex-shrink: 0;
+}
+
+::after {
+  display: block;
+  flex: 0 0 16px;
+  content: '';
+}
+`;
+const Column = _styledComponents.default.div`
+display: flex;
+flex-flow: column;
+width: 355px;
+height: 100%;
+border: solid 1px ${color.Silver};
+border-radius: 6px;
+background-color: ${color.LightSilver};
+
+> :not(:last-child) {
+  flex-shrink: 0;
+}
+`;
+const ColumnHeader = _styledComponents.default.div`
+display: flex;
+justify-content: flex-start;
+align-items: center;
+padding: 8px;
+`;
+const Card = _styledComponents.default.div`
+position: relative;
+border: solid 1px ${color.Silver};
+border-radius: 6px;
+box-shadow: 0 1px 3px hsla(0, 0%, 7%, 0.1);
+padding: 8px 32px;
+background-color: ${color.White};
+cursor: move;
+`;
+const GlobalStyle = (0, _styledComponents.createGlobalStyle)`
+   html, body, #app {
+     height: 100%;
+   }
+ 
+   body {
+     /* https://css-tricks.com/snippets/css/system-font-stack/ */
+     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+       Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+ 
+     overflow-wrap: break-word;
+   }
+ `;
+
+_reactDom.default.render(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement(GlobalStyle, null), _react.default.createElement(App, null)), document.getElementById('app'));
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./color":"color.tsx"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -32051,7 +32183,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51198" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57924" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -17,5 +17,11 @@
     "parcel-bundler": "1.12.3",
     "prettier": "^2.2.1",
     "typescript": "^4.2.3"
-  }
+  },
+  "name": "react-redux",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/minami0601/react-redux.git",
+  "author": "minami0601 <minami.love.bb@icloud.com>",
+  "license": "MIT"
 }

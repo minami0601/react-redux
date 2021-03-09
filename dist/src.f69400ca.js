@@ -32278,7 +32278,155 @@ const Link = _styledComponents.default.a.attrs({
   line-height: 1.7;
   white-space: pre-wrap;
 `;
-},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./color":"color.tsx","./icon":"icon.tsx"}],"Column.tsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./color":"color.tsx","./icon":"icon.tsx"}],"Button.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.DangerButton = exports.ConfirmButton = exports.Button = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var color = _interopRequireWildcard(require("./color"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const Button = _styledComponents.default.button.attrs({
+  type: 'button'
+})`
+  width: 100%;
+  border: solid 1px ${color.Silver};
+  border-radius: 3px;
+  padding: 6px 8px;
+  background-color: ${color.LightSilver};
+  background-image: linear-gradient(${color.White}, ${color.LightSilver});
+  color: ${color.Black};
+  font-size: 14px;
+  text-align: center;
+
+  :hover:not(:disabled) {
+    border-color: ${color.Gray};
+    background-position-y: -0.5em;
+  }
+  :disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+`;
+exports.Button = Button;
+const ConfirmButton = (0, _styledComponents.default)(Button)`
+  border-color: ${color.Blue};
+  background-color: ${color.Navy};
+  background-image: linear-gradient(${color.Blue}, ${color.Navy});
+  color: ${color.White};
+
+  :hover:not(:disabled) {
+    border-color: ${color.Navy};
+  }
+`;
+exports.ConfirmButton = ConfirmButton;
+const DangerButton = (0, _styledComponents.default)(Button)`
+  border-color: ${color.Red};
+  background-color: ${color.Maroon};
+  background-image: linear-gradient(${color.Red}, ${color.Maroon});
+  color: ${color.White};
+
+  :hover:not(:disabled) {
+    border-color: ${color.Maroon};
+  }
+`;
+exports.DangerButton = DangerButton;
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./color":"color.tsx"}],"InputForm.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.InputForm = InputForm;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var color = _interopRequireWildcard(require("./color"));
+
+var _Button = require("./Button");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function InputForm({
+  value,
+  onChange,
+  onConfirm,
+  onCancel,
+  className
+}) {
+  const disabled = !(value === null || value === void 0 ? void 0 : value.trim());
+
+  const handleConfirm = () => {
+    if (disabled) return;
+    onConfirm === null || onConfirm === void 0 ? void 0 : onConfirm();
+  };
+
+  return _react.default.createElement(Container, {
+    className: className
+  }, _react.default.createElement(Input, {
+    autoFocus: true,
+    placeholder: "Enter a note",
+    value: value,
+    onChange: ev => onChange === null || onChange === void 0 ? void 0 : onChange(ev.currentTarget.value),
+    onKeyDown: ev => {
+      if (!((ev.metaKey || ev.ctrlKey) && ev.key === 'Enter')) return;
+      handleConfirm();
+    }
+  }), _react.default.createElement(ButtonRow, null, _react.default.createElement(AddButton, {
+    disabled: disabled,
+    onClick: handleConfirm
+  }), _react.default.createElement(CancelButton, {
+    onClick: onCancel
+  })));
+}
+
+const Container = _styledComponents.default.div``;
+const Input = _styledComponents.default.textarea`
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  border: solid 1px ${color.Silver};
+  border-radius: 3px;
+  padding: 6px 8px;
+  background-color: ${color.White};
+  font-size: 14px;
+  line-height: 1.7;
+
+  :focus {
+    outline: none;
+    border-color: ${color.Blue};
+  }
+`;
+const ButtonRow = _styledComponents.default.div`
+  display: flex;
+
+  > :not(:first-child) {
+    margin-left: 8px;
+  }
+`;
+const AddButton = (0, _styledComponents.default)(_Button.ConfirmButton).attrs({
+  children: 'Add'
+})``;
+const CancelButton = (0, _styledComponents.default)(_Button.Button).attrs({
+  children: 'Cancel'
+})``;
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./color":"color.tsx","./Button":"Button.tsx"}],"Column.tsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32286,7 +32434,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Column = Column;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
@@ -32296,18 +32444,36 @@ var _Card = require("./Card");
 
 var _icon = require("./icon");
 
+var _InputForm2 = require("./InputForm");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Column({
   title,
   cards
 }) {
   const totalCount = cards.length;
-  return _react.default.createElement(Container, null, _react.default.createElement(Header, null, _react.default.createElement(CountBadge, null, totalCount), _react.default.createElement(ColumnName, null, title), _react.default.createElement(AddButton, null)), _react.default.createElement(VerticalScroll, null, cards.map(({
+  const [text, setText] = (0, _react.useState)('');
+  const [inputMode, setInputMode] = (0, _react.useState)(false);
+
+  const toggleInput = () => setInputMode(v => !v);
+
+  const confirmInput = () => setText('');
+
+  const cancelInput = () => setInputMode(false);
+
+  return _react.default.createElement(Container, null, _react.default.createElement(Header, null, _react.default.createElement(CountBadge, null, totalCount), _react.default.createElement(ColumnName, null, title), _react.default.createElement(AddButton, {
+    onClick: toggleInput
+  })), inputMode && _react.default.createElement(InputForm, {
+    value: text,
+    onChange: setText,
+    onConfirm: confirmInput,
+    onCancel: cancelInput
+  }), _react.default.createElement(VerticalScroll, null, cards.map(({
     id,
     text
   }) => _react.default.createElement(_Card.Card, {
@@ -32360,6 +32526,9 @@ const AddButton = _styledComponents.default.button.attrs({
     color: ${color.Blue};
   }
 `;
+const InputForm = (0, _styledComponents.default)(_InputForm2.InputForm)`
+  padding: 8px;
+`;
 const VerticalScroll = _styledComponents.default.div`
   height: 100%;
   padding: 8px;
@@ -32370,7 +32539,7 @@ const VerticalScroll = _styledComponents.default.div`
     margin-top: 8px;
   }
 `;
-},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./color":"color.tsx","./Card":"Card.tsx","./icon":"icon.tsx"}],"App.tsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./color":"color.tsx","./Card":"Card.tsx","./icon":"icon.tsx","./InputForm":"InputForm.tsx"}],"App.tsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32494,7 +32663,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53884" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50419" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

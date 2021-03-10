@@ -32349,7 +32349,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.InputForm = InputForm;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
@@ -32357,11 +32357,11 @@ var color = _interopRequireWildcard(require("./color"));
 
 var _Button = require("./Button");
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function InputForm({
   value,
@@ -32377,9 +32377,11 @@ function InputForm({
     onConfirm === null || onConfirm === void 0 ? void 0 : onConfirm();
   };
 
+  const ref = useAutoFitToContentHeight(value);
   return _react.default.createElement(Container, {
     className: className
   }, _react.default.createElement(Input, {
+    ref: ref,
     autoFocus: true,
     placeholder: "Enter a note",
     value: value,
@@ -32394,6 +32396,29 @@ function InputForm({
   }), _react.default.createElement(CancelButton, {
     onClick: onCancel
   })));
+}
+/**
+ * テキストエリアの高さを内容に合わせて自動調整する
+ *
+ * @param content テキストエリアの内容
+ */
+
+
+function useAutoFitToContentHeight(content) {
+  const ref = (0, _react.useRef)(null);
+  (0, _react.useEffect)(() => {
+    const el = ref.current;
+    if (!el) return;
+    const {
+      borderTopWidth,
+      borderBottomWidth
+    } = getComputedStyle(el);
+    el.style.height = 'auto'; // 一度 auto にしないと高さが縮まなくなる
+
+    el.style.height = `calc(${borderTopWidth} + ${el.scrollHeight}px + ${borderBottomWidth})`;
+  }, // 内容が変わるたびに高さを再計算
+  [content]);
+  return ref;
 }
 
 const Container = _styledComponents.default.div``;
@@ -32663,7 +32688,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50419" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59039" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
